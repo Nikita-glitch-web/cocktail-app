@@ -46,7 +46,7 @@ export const SearchPage = (index) => {
       </h1>
       <div className={style.search_page_form_wrapper}>
         <SearchForm defaultValue={inputValue} onSubmit={submitHandler} />
-        {items.map((item) => {
+        {/* {items.map((item) => {
           console.log(item);
           return (
             <div className={style.details_content_greed}>
@@ -73,7 +73,7 @@ export const SearchPage = (index) => {
               </Link>
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
