@@ -10,7 +10,7 @@ function App() {
     <div className={style.content_wrapper}>
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>

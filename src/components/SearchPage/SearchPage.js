@@ -18,7 +18,7 @@ export const SearchPage = (index) => {
       );
       const data = await request.json();
       console.log(data);
-      setItems(data.meals);
+      setItems(data.drinks);
     } catch (e) {
       console.error(e);
       alert("ERRRO");
@@ -44,38 +44,41 @@ export const SearchPage = (index) => {
       <h1 className={style.search_page_title}>
         Create your <br></br>perfect cocktail!
       </h1>
-      <div className={style.search_page_form_wrapper}>
+      <div className={style.form_wrapper}>
         <SearchForm defaultValue={inputValue} onSubmit={submitHandler} />
-        {/* {items.map((item) => {
+      </div>
+      <div className={style.search_page_form_wrapper}>
+        {items.map((item) => {
           console.log(item);
           return (
             <div className={style.details_content_greed}>
-              <Link to={`/details/${item.idDrink}`} title={item.idDrink}>
+              <Link className={style.link} to={`/details/${item.idDrink}`} title={item.idDrink}>
                 <div className={style.details_content_item}>
-                  <img
-                    alt=""
-                    src={item.strDrinkThumb}
-                    className={style.meal_img}
-                  />
-                  <div>
-                    <h1>{item.strCocktail}</h1>
-                    <p>{item.strInstructions}</p>
+                  <div className={style.drink_img_wrapper}>
+                    <img
+                      alt=""
+                      src={item.strDrinkThumb}
+                      className={style.meal_img}
+                    />
                   </div>
+                  <h1 className={style.cocktail_title}>{item.strDrink}</h1>
                   <div className={style.ingredients_column}>
-                    <p>{item.strIngredient1}</p>
-                    <p>{item.strIngredient2}</p>
-                    <p>{item.strIngredient3}</p>
-                    <p>{item.strIngredient4}</p>
-                    <p>{item.strIngredient5}</p>
-                    <p>{item.strIngredient6}</p>
+                    <p className={style.main_text}>{item.strInstructions}</p>
+                    <div className={style.subtext_column}>
+                      <p className={style.sub_text}>{item.strIngredient1}</p>
+                      <p className={style.sub_text}>{item.strIngredient2}</p>
+                      <p className={style.sub_text}>{item.strIngredient3}</p>
+                      <p className={style.sub_text}>{item.strIngredient4}</p>
+                      <p className={style.sub_text}>{item.strIngredient5}</p>
+                      <p className={style.sub_text}>{item.strIngredient6}</p>
+                    </div>
                   </div>
                 </div>
               </Link>
             </div>
           );
-        })} */}
+        })}
       </div>
     </div>
   );
 };
-
