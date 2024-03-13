@@ -52,9 +52,8 @@ body {
 }
 
 .meal_img {
-  width: 350px;
-  height: 320px;
-  padding-top: 30px;
+    width: 75%;
+    padding-top: 30px;
 }
 
 .cocktail_title {
