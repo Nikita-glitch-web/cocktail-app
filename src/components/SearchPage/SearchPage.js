@@ -28,6 +28,7 @@ export const SearchPage = (index) => {
   useEffect(() => {
     console.log("RENDERD", searchParams.get("q"));
     const queryParamsValue = searchParams.get("q");
+    // тут виклик нової функціїї з фетч
     if (queryParamsValue) {
       setInputValue(queryParamsValue);
       makeSearchRequest(queryParamsValue);
