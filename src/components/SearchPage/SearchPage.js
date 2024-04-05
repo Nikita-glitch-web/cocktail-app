@@ -8,6 +8,7 @@ export const SearchPage = (index) => {
   const [inputValue, setInputValue] = useState("");
   const [items, setItems] = useState([]);
   console.log(items);
+
   const makeSearchRequest = async (inputValue) => {
     try {
       const request = await fetch(
@@ -50,10 +51,36 @@ export const SearchPage = (index) => {
       </div>
       <div className={style.search_page_form_wrapper}>
         {items.map((item) => {
+          const clickHandler = (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            const existingsId = localStorage.getItem("favourite-Drink"); // считав с ЛокалСтореджа
+            console.log(existingsId);
+            const myArray = existingsId ? JSON.parse(existingsId) : [];
+            if (myArray.includes(items.idDrink) === false) {
+              myArray.push(items.idDrink);
+            }
+            localStorage.setItem("favourite-Drink", JSON.stringify(myArray));
+            let idStorage = localStorage.getItem("favourite-Drink");
+            console.log(idStorage);
+            if (myArray.includes(item.id) === true) {
+
+            }
+
+            // window.localStorage.setItem('favorites', [''])
+          };
+
           console.log(item);
           return (
             <div className={style.details_content_greed}>
-              <Link className={style.link} to={`/details/${item.idDrink}`} title={item.idDrink}>
+              <button onClick={clickHandler} className={style.favourites_btn}>
+                .
+              </button>
+              <Link
+                className={style.link}
+                to={`/details/${item.idDrink}`}
+                title={item.idDrink}
+              >
                 <div className={style.details_content_item}>
                   <div className={style.drink_img_wrapper}>
                     <img

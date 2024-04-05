@@ -47,13 +47,34 @@ body {
   justify-content: center;
   flex-direction: row;
   width: 25%;
-  background: rgba(210, 121, 166, 0.28);
+  background: none;
   border: 3px solid white;
 }
 
 .meal_img {
     width: 75%;
-    padding-top: 30px;
+    padding-top: 20px;
+}
+
+.favourites_btn {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  font-size: 20px;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 80px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.favourites_btn:focus {
+    opacity: 0%;
+}
+
+.favourites_btn:focus {
+  outline: none;
+
 }
 
 .cocktail_title {

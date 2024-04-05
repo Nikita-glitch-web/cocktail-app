@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import style from "./HomePage.module.css";
 import { SearchForm } from "../SearchForm/SearchForm";
+import { FavouritesBtn } from "../FavouritesBtn/FavouritesBtn"; 
 
 const HomePage = () => {
   const [items, setItems] = useState([]);
@@ -63,6 +64,7 @@ const HomePage = () => {
               title={item.idDrink}
             >
               <div className={style.details_content_item}>
+                <FavouritesBtn />
                 <div className={style.drink_img_wrapper}>
                   <img
                     alt=""
@@ -74,12 +76,30 @@ const HomePage = () => {
                 <div className={style.ingredients_column}>
                   <p className={style.main_text}>{item.strInstructions}</p>
                   <div className={style.subtext_column}>
-                    <p className={style.sub_text}>{item.strIngredient1}</p>
-                    <p className={style.sub_text}>{item.strIngredient2}</p>
-                    <p className={style.sub_text}>{item.strIngredient3}</p>
-                    <p className={style.sub_text}>{item.strIngredient4}</p>
-                    <p className={style.sub_text}>{item.strIngredient5}</p>
-                    <p className={style.sub_text}>{item.strIngredient6}</p>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient1}</p>
+                      <p className={style.sub_text}>{item.strMeasure1}</p>
+                    </div>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient2}</p>
+                      <p className={style.sub_text}>{item.strMeasure2}</p>
+                    </div>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient3}</p>
+                      <p className={style.sub_text}>{item.strMeasure3}</p>
+                    </div>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient4}</p>
+                      <p className={style.sub_text}>{item.strMeasure4}</p>
+                    </div>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient5}</p>
+                      <p className={style.sub_text}>{item.strMeasure5}</p>
+                    </div>
+                    <div className={style.sub_text_row}>
+                      <p className={style.sub_text}>{item.strIngredient5}</p>
+                      <p className={style.sub_text}>{item.strMeasure5}</p>
+                    </div>
                   </div>
                 </div>
               </div>

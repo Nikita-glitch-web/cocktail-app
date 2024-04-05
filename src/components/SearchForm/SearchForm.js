@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import style from "./SearchForm.module.css";
 
-
 export const SearchForm = ({ defaultValue, onSubmit }) => {
   const [inputValue, setInputValue] = React.useState();
 

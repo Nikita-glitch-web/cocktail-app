@@ -1,0 +1,23 @@
+.delete_btn {
+    border: 2px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: none;
+    width: 65px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
+
+}
+
+.delete_btn_img {
+    width: 45px;
+    height: 45px;
+}
+
+.delete_btn_wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+

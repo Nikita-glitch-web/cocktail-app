@@ -1,0 +1,21 @@
+.favourites_btn {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  font-size: 20px;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 80px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.favourites_btn:focus {
+    opacity: 0%;
+}
+
+.favourites_btn:focus {
+  outline: none;
+
+}
+
