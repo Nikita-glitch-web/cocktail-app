@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SearchForm } from "../SearchForm/SearchForm";
 import style from "./SearchPage.module.css";
-
+import { ProductCard } from '../ProductCard';
 export const SearchPage = (index) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState("");
@@ -51,59 +51,10 @@ export const SearchPage = (index) => {
       </div>
       <div className={style.search_page_form_wrapper}>
         {items.map((item) => {
-          const clickHandler = (e) => {
-            e.stopPropagation();
-            e.preventDefault();
-            const existingsId = localStorage.getItem("favourite-Drink"); // считав с ЛокалСтореджа
-            console.log(existingsId);
-            const myArray = existingsId ? JSON.parse(existingsId) : [];
-            if (myArray.includes(items.idDrink) === false) {
-              myArray.push(items.idDrink);
-            }
-            localStorage.setItem("favourite-Drink", JSON.stringify(myArray));
-            let idStorage = localStorage.getItem("favourite-Drink");
-            console.log(idStorage);
-            if (myArray.includes(item.id) === true) {
-
-            }
-
-            // window.localStorage.setItem('favorites', [''])
-          };
-
+         
           console.log(item);
           return (
-            <div className={style.details_content_greed}>
-              <button onClick={clickHandler} className={style.favourites_btn}>
-                .
-              </button>
-              <Link
-                className={style.link}
-                to={`/details/${item.idDrink}`}
-                title={item.idDrink}
-              >
-                <div className={style.details_content_item}>
-                  <div className={style.drink_img_wrapper}>
-                    <img
-                      alt=""
-                      src={item.strDrinkThumb}
-                      className={style.meal_img}
-                    />
-                  </div>
-                  <h1 className={style.cocktail_title}>{item.strDrink}</h1>
-                  <div className={style.ingredients_column}>
-                    <p className={style.main_text}>{item.strInstructions}</p>
-                    <div className={style.subtext_column}>
-                      <p className={style.sub_text}>{item.strIngredient1}</p>
-                      <p className={style.sub_text}>{item.strIngredient2}</p>
-                      <p className={style.sub_text}>{item.strIngredient3}</p>
-                      <p className={style.sub_text}>{item.strIngredient4}</p>
-                      <p className={style.sub_text}>{item.strIngredient5}</p>
-                      <p className={style.sub_text}>{item.strIngredient6}</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+            <ProductCard product={item}/>
           );
         })}
       </div>
