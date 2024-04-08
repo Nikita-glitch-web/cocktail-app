@@ -97,6 +97,9 @@ body {
   padding-top: 50px;
   justify-content: center;
   padding-bottom: 50px;
+  padding-left: 76px;
+  padding-right: 76px;
+  border-bottom: 3px solid white;
 }
 
 .drink_img_wrapper {

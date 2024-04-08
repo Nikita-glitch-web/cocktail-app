@@ -6,18 +6,21 @@ import { SearchPage } from "./components/SearchPage/SearchPage";
 import { DetailsPage } from "./components/DetailsPage/DetailsPage";
 import { FavouritesPage } from "./components/FavouritesPage/FavouritesPage";
 import { FavouritesMenu } from "./components/FavouritesMenu/FavouritesMenu";
+import { PopularIngredients } from "./components/Popular-Ingredients/PopularIngredients"; 
+
 
 function App() {
   return (
     <div className={style.content_wrapper}>
       <BrowserRouter>
-          <FavouritesMenu />
-          <Routes>
-            <Route path="/favourites" element={<FavouritesPage />} />
-            <Route path="" element={<Home />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/details/:id" element={<DetailsPage />} />
-          </Routes>
+        <FavouritesMenu />
+        <Routes>
+          <Route path="/ingredient" element={<PopularIngredients />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="" element={<Home />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

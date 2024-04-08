@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./HomePage.module.css";
 import { SearchForm } from "../SearchForm/SearchForm";
-import { ProductCard } from '../ProductCard';
+import { ProductCard } from "../ProductCard";
+import { PopularIngredients } from "../Popular-Ingredients/PopularIngredients";
 
 const HomePage = () => {
   const [items, setItems] = useState([]);
@@ -12,6 +13,8 @@ const HomePage = () => {
     console.log(value);
     navigate(`/search?q=${value}`);
   };
+
+
 
   const makeRandomRequest = async () => {
     try {
@@ -30,8 +33,15 @@ const HomePage = () => {
     }
   };
 
+
   useEffect(() => {
+  for (let i = 0; i < 4; i++) {
     makeRandomRequest();
+    const randomCocktails = [];
+    randomCocktails[i] ++;
+    // randomCocktails
+    console.log(randomCocktails)
+  }
   }, []);
 
   return (
@@ -43,9 +53,15 @@ const HomePage = () => {
       {items.map((item) => {
         console.log(item);
         return (
-          <ProductCard product={item} />
+          <div className={style.drink_of_day_wrapper}>
+            <p className={style.home_title}>Drink of the day!</p>
+            <ProductCard product={item} />
+          </div>
         );
       })}
+      <div className={style.populars_wrapper}>
+        <PopularIngredients />
+      </div>
     </div>
   );
 };

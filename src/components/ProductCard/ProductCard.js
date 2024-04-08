@@ -54,17 +54,6 @@ export const ProductCard = ({ product, onRemove }) => {
           />
         </div>
         <h1 className={style.cocktail_title}>{product.strDrink}</h1>
-        <div className={style.ingredients_column}>
-          <p className={style.main_text}>{product.strInstructions}</p>
-          <div className={style.subtext_column}>
-            <p className={style.sub_text}>{product.strIngredient1}</p>
-            <p className={style.sub_text}>{product.strIngredient2}</p>
-            <p className={style.sub_text}>{product.strIngredient3}</p>
-            <p className={style.sub_text}>{product.strIngredient4}</p>
-            <p className={style.sub_text}>{product.strIngredient5}</p>
-            <p className={style.sub_text}>{product.strIngredient6}</p>
-          </div>
-        </div>
       </div>
     </Link>
   </div>;

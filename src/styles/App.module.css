@@ -4,9 +4,7 @@ body {
 }
 
 .app_wrapper {
-  background-image: url("../images/shot-glasses-with-cocktails-and-copy-space.jpg");
-  background-size: cover;
-  background-position: center;
+  background: #230312;
   width: 100%;
   position: absolute;
   display: flex;

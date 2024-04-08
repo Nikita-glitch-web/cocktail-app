@@ -28,6 +28,5 @@ export const DetailsPage = () => {
     makeDetailsRequest();
     console.log("Details request works");
   }, []);
-
-  return <h1>Details Page working</h1>;
+  
 };

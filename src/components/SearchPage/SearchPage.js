@@ -3,6 +3,8 @@ import { Link, useSearchParams } from "react-router-dom";
 import { SearchForm } from "../SearchForm/SearchForm";
 import style from "./SearchPage.module.css";
 import { ProductCard } from '../ProductCard';
+
+
 export const SearchPage = (index) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState("");
@@ -51,8 +53,9 @@ export const SearchPage = (index) => {
       </div>
       <div className={style.search_page_form_wrapper}>
         {items.map((item) => {
-         
           console.log(item);
+          <div className={style.ingredient_box}>
+          </div>  
           return (
             <ProductCard product={item}/>
           );
