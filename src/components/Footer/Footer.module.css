@@ -1,0 +1,20 @@
+.footer_box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #1d000d;
+    margin-top: 15%;
+}
+
+.footer_content {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.footer_text {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}

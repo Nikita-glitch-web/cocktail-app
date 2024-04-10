@@ -7,6 +7,7 @@ import { DetailsPage } from "./components/DetailsPage/DetailsPage";
 import { FavouritesPage } from "./components/FavouritesPage/FavouritesPage";
 import { FavouritesMenu } from "./components/FavouritesMenu/FavouritesMenu";
 import { PopularIngredients } from "./components/Popular-Ingredients/PopularIngredients"; 
+import { Footer } from "./components/Footer/Footer";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

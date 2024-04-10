@@ -6,8 +6,9 @@ import { ProductCard } from "../ProductCard";
 import { PopularIngredients } from "../Popular-Ingredients/PopularIngredients";
 
 const HomePage = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems ] = useState([]);
   const navigate = useNavigate();
+  const randomCocktail = useState([]);
 
   const submitHandler = (value) => {
     console.log(value);
@@ -25,6 +26,7 @@ const HomePage = () => {
         }
       );
       const data = await request.json();
+      randomCocktail.push(data.drinks);
       console.log(data);
       setItems(data.drinks);
     } catch (e) {
