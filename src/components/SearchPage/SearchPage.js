@@ -46,7 +46,7 @@ export const SearchPage = (index) => {
   return (
     <div className={style.search_page_box}>
       <h1 className={style.search_page_title}>
-        Create your <br></br>perfect cocktail!
+        Find your perfect cocktail!
       </h1>
       <div className={style.form_wrapper}>
         <SearchForm defaultValue={inputValue} onSubmit={submitHandler} />

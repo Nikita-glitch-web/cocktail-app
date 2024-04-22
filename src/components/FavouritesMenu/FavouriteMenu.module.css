@@ -3,6 +3,7 @@
   justify-content: flex-end;
   padding-top: 30px;
   padding-right: 5%;
+  padding-bottom: 6%;
 }
 
 .link {
@@ -10,7 +11,7 @@
   background: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 300;
   text-align: center;
   padding: 7px;

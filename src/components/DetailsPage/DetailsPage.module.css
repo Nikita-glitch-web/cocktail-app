@@ -1,0 +1,62 @@
+.details_wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.details_big_img_box {
+  width: 50%;
+}
+
+.details_big_img {
+  width: 100%;
+}
+
+.details_title {
+  font-size: 26px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ingredient_text {
+  font-size: 20px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 0px;
+  padding: 12px;
+}
+
+.details_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredient_content {
+  display: flex;
+  justify-content: center;
+}
+
+.instruction_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.ingredients_title {
+  font-size: 22px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.instruction_title {
+  text-align: center;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.instruction_text {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}

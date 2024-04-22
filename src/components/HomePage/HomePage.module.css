@@ -22,7 +22,7 @@
 .search_page_title {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 300;
   text-align: center;
 }
@@ -119,4 +119,11 @@
 .populars_wrapper {
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 83%;
+  align-items: baseline;
 }

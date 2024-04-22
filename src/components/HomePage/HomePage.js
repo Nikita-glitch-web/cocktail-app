@@ -4,9 +4,10 @@ import style from "./HomePage.module.css";
 import { SearchForm } from "../SearchForm/SearchForm";
 import { ProductCard } from "../ProductCard";
 import { PopularIngredients } from "../Popular-Ingredients/PopularIngredients";
+import { RandomIngredients } from "../Random-Ingredients/Random-Ingredients";
 
 const HomePage = () => {
-  const [items, setItems ] = useState([]);
+  const [randomCoctails, setRandomCoctails] = useState([]);
   const navigate = useNavigate();
   const randomCocktail = useState([]);
 
@@ -14,8 +15,6 @@ const HomePage = () => {
     console.log(value);
     navigate(`/search?q=${value}`);
   };
-
-
 
   const makeRandomRequest = async () => {
     try {
@@ -26,41 +25,46 @@ const HomePage = () => {
         }
       );
       const data = await request.json();
-      randomCocktail.push(data.drinks);
-      console.log(data);
-      setItems(data.drinks);
+      if (data.drinks?.length > 0) {
+        return data.drinks;
+      }
     } catch (e) {
       console.error(e);
       alert("ERRRO");
     }
   };
 
+  const fetchRandomCoctails = async () => {
+    let coctailsToSet = [];
+    for (let i = 0; i < 4; i++) {
+      const coctails = await makeRandomRequest();
+      console.log(coctails);
+      coctailsToSet = [...coctailsToSet, ...coctails];
+    }
 
+    console.log(coctailsToSet);
+    setRandomCoctails(coctailsToSet);
+  };
+  window.randomCocktail = randomCocktail;
   useEffect(() => {
-  for (let i = 0; i < 4; i++) {
-    makeRandomRequest();
-    const randomCocktails = [];
-    randomCocktails[i] ++;
-    // randomCocktails
-    console.log(randomCocktails)
-  }
+    fetchRandomCoctails();
   }, []);
 
   return (
     <div className={style.search_bar_container}>
       <h1 className={style.search_page_title}>
-        Create your <br></br>perfect cocktail!
+        Find your perfect cocktail!
       </h1>
       <SearchForm onSubmit={submitHandler} />
-      {items.map((item) => {
-        console.log(item);
-        return (
-          <div className={style.drink_of_day_wrapper}>
-            <p className={style.home_title}>Drink of the day!</p>
-            <ProductCard product={item} />
-          </div>
-        );
-      })}
+      <div className={style.drink_of_day_wrapper}>
+        <p className={style.home_title}>Drinks of the day!</p>
+        <div className={style.row}>
+          {randomCoctails.map((item) => {
+            console.log(item);
+            return <ProductCard product={item} />;
+          })}
+        </div>
+      </div>
       <div className={style.populars_wrapper}>
         <PopularIngredients />
       </div>
