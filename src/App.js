@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/ingredient" element={<PopularIngredients />} />
           <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="" element={<Home />} />
+          <Route path="/cocktail-app" element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
