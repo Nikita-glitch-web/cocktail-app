@@ -52,8 +52,8 @@ body {
 }
 
 .meal_img {
-    width: 75%;
-    padding-top: 20px;
+  width: 75%;
+  padding-top: 20px;
 }
 
 .favourites_btn {
@@ -69,12 +69,11 @@ body {
 }
 
 .favourites_btn:focus {
-    opacity: 0%;
+  opacity: 0%;
 }
 
 .favourites_btn:focus {
   outline: none;
-
 }
 
 .cocktail_title {
@@ -103,6 +102,15 @@ body {
   border-top: 3px solid white;
   margin-bottom: 15%;
   margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  .search_page_form_wrapper {
+    display: block;
+  }
+  .details_content_greed {
+    width: 100%;
+  }
 }
 
 .drink_img_wrapper {
@@ -136,5 +144,5 @@ body {
 }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 }

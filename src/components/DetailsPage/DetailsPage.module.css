@@ -1,15 +1,19 @@
 .details_wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 100vh;
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .details_big_img_box {
   width: 50%;
+  padding-right: 4%;
 }
 
 .details_big_img {
   width: 100%;
+  padding-top: 30px;
 }
 
 .details_title {
@@ -19,21 +23,26 @@
 }
 
 .ingredient_text {
-  font-size: 20px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  padding-left: 0px;
-  padding: 12px;
+      font-size: 25px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 0px;
+    padding-right: 18px;
+    padding-top: 12px;
+}
+
+.ingredient_wrapper {
+  display: flex;
 }
 
 .details_content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .ingredient_content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .instruction_wrapper {
@@ -55,8 +64,19 @@
 }
 
 .instruction_text {
-  font-size: 20px;
+  font-size: 23px;
   text-align: center;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.details_part {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-left: 4%;
+}
+
+.ingredient_text:nth-child(1) {
+  padding-left: 0px;
 }

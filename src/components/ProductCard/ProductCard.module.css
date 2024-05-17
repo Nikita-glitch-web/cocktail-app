@@ -123,3 +123,10 @@ body {
 .link {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+
+  .details_content_greed {
+    width: 100%;
+  }
+}

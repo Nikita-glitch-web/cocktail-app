@@ -23,7 +23,6 @@ export const DetailsPage = () => {
         }
       );
       const data = await request.json();
-      debugger;
       console.log(data);
       console.log(request);
       if (data.drinks) {

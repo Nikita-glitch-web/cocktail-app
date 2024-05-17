@@ -8,9 +8,6 @@ export const Footer = () => {
         <div>
           <h1 className={style.footer_text}>Made by Nikita Lytvynov in 2024</h1>
         </div>
-        <div>
-          <h2 className={style.footer_text}>nikitalytvynov0506@gmail.com</h2>
-        </div>
       </div>
     </footer>
   );
