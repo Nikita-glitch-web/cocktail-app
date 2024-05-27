@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { SearchForm } from "../SearchForm/SearchForm";
 import style from "./SearchPage.module.css";
-import { ProductCard } from '../ProductCard';
-
+import { ProductCard } from "../ProductCard";
 
 export const SearchPage = (index) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,13 +27,35 @@ export const SearchPage = (index) => {
     }
   };
 
+  const searchByIngredient = async (inputValue) => {
+    try {
+      const request = await fetch(
+        `www.thecocktaildb.com/api/json/v1/1/filter.php?i=${inputValue}`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await request.json();
+      console.log(data);
+      setItems(data.drinks);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   useEffect(() => {
     console.log("RENDERD", searchParams.get("q"));
     const queryParamsValue = searchParams.get("q");
+    const category = searchParams.get("c");
+    console.log(category);
     // тут виклик нової функціїї з фетч
+    searchByIngredient();
     if (queryParamsValue) {
+      // call search by ingredients
       setInputValue(queryParamsValue);
       makeSearchRequest(queryParamsValue);
+    } else if (category) {
+      console.log(">>>>>>>>.", category);
     }
   }, [searchParams]);
 
@@ -45,20 +66,15 @@ export const SearchPage = (index) => {
 
   return (
     <div className={style.search_page_box}>
-      <h1 className={style.search_page_title}>
-        Find your perfect cocktail!
-      </h1>
+      <h1 className={style.search_page_title}>Find your perfect cocktail!</h1>
       <div className={style.form_wrapper}>
         <SearchForm defaultValue={inputValue} onSubmit={submitHandler} />
       </div>
       <div className={style.search_page_form_wrapper}>
         {items.map((item) => {
           console.log(item);
-          <div className={style.ingredient_box}>
-          </div>  
-          return (
-            <ProductCard product={item}/>
-          );
+          <div className={style.ingredient_box}></div>;
+          return <ProductCard product={item} />;
         })}
       </div>
     </div>

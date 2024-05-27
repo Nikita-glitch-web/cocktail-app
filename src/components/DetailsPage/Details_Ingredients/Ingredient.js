@@ -1,39 +1,37 @@
 import React, { useState } from "react";
 import style from "../DetailsPage.module.css";
+import image from "../123.jpg"
 
-export const Ingredient = ({ title }) => {
+export const Ingredient = ({ title, measure }) => {
   console.log(title);
 
-  // console.log(detail);
-  // const params = useParams();
-  // console.log(params);
-
-  // const detailsRequest = async () => {
-  //   try {
-  //     const request = await fetch(
-  //       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?id=${params.id}`,
-  //       {
-  //         method: "GET",
-  //       }
-  //     );
-  //     const data = await request.json();
-  //     console.log(data);
-  //     console.log(request);
-  //     setDetails(data.drinks[0])
-  //   } catch (e) {
-  //     console.error(e);
-  //     alert("ERROR");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   detailsRequest();
-  //   console.log("Details request works");
-  // }, []);
+  const ingredientTitleArray = title?.split(" ");
+  console.log(ingredientTitleArray);
+  const thumbnailUrl = `https://www.thecocktaildb.com/images/ingredients/${
+    ingredientTitleArray ? (
+      ingredientTitleArray[0]
+    ) : (  <img src={image} alt=""/>  )
+  }-Medium.png`;
+  console.log(thumbnailUrl);
 
   return (
     <div className={style.ingredient_wrapper}>
-      <p className={style.ingredient_text}>{title}</p>
+      <div>
+        <img
+          className={style.ingredient_img}
+          alt=""
+          src={thumbnailUrl}
+          onError={() => {
+            console.log("IMAGE NOT LOADED");
+          }}
+        />
+      </div>
+      <div className={style.ingredients_text_wrapper}>
+        <p className={style.ingredient_text}>
+          {measure}
+          {title}
+        </p>
+      </div>
     </div>
   );
 };

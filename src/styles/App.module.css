@@ -20,3 +20,11 @@ body {
   font-weight: 300;
   text-align: center;
 }
+
+.menu_wrapper {
+  display: flex;
+    padding-bottom: 6%;
+    justify-content: flex-end;
+    padding-right: 5%;
+
+}

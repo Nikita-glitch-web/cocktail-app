@@ -1,14 +1,23 @@
 .details_wrapper {
   display: flex;
   justify-content: center;
-  height: 100vh;
   padding-left: 7%;
   padding-right: 7%;
 }
 
+.placeholder_img {
+  width: 200px;
+  height: 200px;
+}
+
+
 .details_big_img_box {
   width: 50%;
   padding-right: 4%;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .details_big_img {
@@ -23,16 +32,28 @@
 }
 
 .ingredient_text {
-      font-size: 25px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 0px;
-    padding-right: 18px;
-    padding-top: 12px;
+  font-size: 16px;
+  color: #a78d9b;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 0px;
+  text-align: center;
+}
+
+.ingredient_text:nth-child(1) {
+  padding-right: 6px;
+}
+
+.ingredient_img {
+  width: 200px;
 }
 
 .ingredient_wrapper {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top: 2%;
+  width: 200px;
 }
 
 .details_content {
@@ -43,6 +64,13 @@
 .ingredient_content {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 8%;
+}
+
+.ingredients_text_wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .instruction_wrapper {
@@ -61,22 +89,83 @@
   font-size: 24px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  padding-top: 8%;
 }
 
 .instruction_text {
   font-size: 23px;
   text-align: center;
   color: white;
+  padding-left: 12%;
   font-family: Arial, Helvetica, sans-serif;
+  padding-right: 12%;
 }
 
 .details_part {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
-    padding-left: 4%;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-left: 4%;
 }
 
 .ingredient_text:nth-child(1) {
   padding-left: 0px;
+}
+
+.categories_text {
+  background: #f3f3f3;
+  color: #777;
+  font: 12px verdana;
+  text-transform: uppercase;
+  padding: 6px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.categories_wrapper {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .details_content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .details_wrapper {
+    height: auto;
+  }
+
+  .details_big_img_box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .details_big_img {
+    width: 75%;
+    padding-top: 30px;
+  }
+  .details_part {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .instruction_wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+  }
+
+  .ingredient_wrapper {
+    align-items: center;
+  }
+
+  .ingredient_content {
+    justify-content: center;
+  }
 }
