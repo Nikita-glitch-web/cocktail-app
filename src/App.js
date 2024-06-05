@@ -10,6 +10,7 @@ import { PopularIngredients } from "./components/Popular-Ingredients/PopularIngr
 import { Footer } from "./components/Footer/Footer";
 import { HomeMenu } from "./components/Home-Nav-Btn/Home_nav_btn";
 import { CategoriesPage } from "./components/CategoriesPage/CategoriesPage";
+import { AlcoholicPage } from "./components/AlcoholicPage/AlcoholicPage";
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
         <Routes>
           <Route path="/ingredient" element={<PopularIngredients />} />
           <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="/cocktail-app" exact={true} element={<Home />} />
+          <Route path="/" exact={true} element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
-          <Route path="categories/" element={<CategoriesPage/>} />
+          <Route path="categories/" element={<CategoriesPage />} />
+          <Route path="alcoholic/" element={<AlcoholicPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -83,11 +83,13 @@ export const DetailsPage = () => {
               src={item.strDrinkThumb}
             />
             <div className={style.categories_wrapper}>
-              <Link to={`/categories?c=alcoholic`}>
+              <Link to={`/alcoholic?c=${item.strAlcoholic}`}>
                 <p className={style.categories_text}>{item.strAlcoholic}</p>
               </Link>
-              <Link to={`/categories?c=category`}>
-                <p className={style.categories_text}>{item.strCategory}</p>
+              <Link to={`/categories?c=${item.strCategory.split().join("_")}`}>
+                <p className={style.categories_text}>
+                   {item.strCategory.split().join("_")}
+                </p>
               </Link>
             </div>
           </div>
@@ -110,6 +112,12 @@ export const DetailsPage = () => {
           <h2 className={style.instruction_title}>Instructions</h2>
           <Instruction text={item.strInstructions} />
         </div>
+      </div>
+      <div className={style.glass_wrapper}>
+        <h2 className={style.glass_title}>Glass</h2>
+        <p className={style.glass_text}>
+          Serve:{item.strGlass}
+        </p>
       </div>
     </div>
   );

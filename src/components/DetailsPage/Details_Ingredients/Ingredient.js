@@ -10,7 +10,7 @@ export const Ingredient = ({ title, measure }) => {
   const thumbnailUrl = `https://www.thecocktaildb.com/images/ingredients/${
     ingredientTitleArray ? (
       ingredientTitleArray[0]
-    ) : (  <img src={image} alt=""/>  )
+    ) : (  <img className={style.ingredient_img} src={image} alt=""/>  )
   }-Medium.png`;
   console.log(thumbnailUrl);
 

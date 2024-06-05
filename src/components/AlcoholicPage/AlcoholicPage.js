@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import style from "./Categories.module.css";
-import { SearchPage } from "../SearchPage/SearchPage";
+import style from "./AlcoholicPage.module.css";
 import { ProductCard } from "../ProductCard";
 
-export const CategoriesPage = () => {
+export const AlcoholicPage = () => {
   const [items, setItems] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -15,7 +14,7 @@ export const CategoriesPage = () => {
   const makeCategoriesRequest = async (category) => {
     try {
       const request = await fetch(
-        `https://thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`,
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${category}`,
         {
           method: "GET",
         }
@@ -44,9 +43,7 @@ export const CategoriesPage = () => {
   //   };
   return (
     <div>
-      <div className={style.main_ingredient_wrapper}>
-      </div>
-      <p className={style.title}>Categories page is working</p>
+      <p className={style.title}>Alcoholic page is working</p>
       <div className={style.card_wrapper}>
         {items.map((item) => {
           console.log(item);
@@ -56,5 +53,3 @@ export const CategoriesPage = () => {
     </div>
   );
 };
-
-// api = "www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink";
