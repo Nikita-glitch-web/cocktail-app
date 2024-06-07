@@ -20,6 +20,14 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .ingredients_wrapper {
+    flex-wrap: wrap;
+  }
+
+}
+
+
 .img {
   width: 80%;
 }

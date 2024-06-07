@@ -44,6 +44,7 @@ export const AlcoholicPage = () => {
   return (
     <div>
       <p className={style.title}>Alcoholic page is working</p>
+      <p>AAA</p>
       <div className={style.card_wrapper}>
         {items.map((item) => {
           console.log(item);
