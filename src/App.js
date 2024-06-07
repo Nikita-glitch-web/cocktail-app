@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./components/HomePage/HomePage";
 import style from "./styles/App.module.css";
 import { SearchPage } from "./components/SearchPage/SearchPage";
@@ -21,13 +21,14 @@ function App() {
           <FavouritesMenu />
         </div>
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/ingredient" element={<PopularIngredients />} />
           <Route path="/favourites" element={<FavouritesPage />} />
-          <Route path="/" exact={true} element={<Home />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/details/:id" element={<DetailsPage />} />
-          <Route path="categories/" element={<CategoriesPage />} />
-          <Route path="alcoholic/" element={<AlcoholicPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/alcoholic" element={<AlcoholicPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
