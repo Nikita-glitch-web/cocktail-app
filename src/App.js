@@ -15,7 +15,7 @@ import { AlcoholicPage } from "./components/AlcoholicPage/AlcoholicPage";
 function App() {
   return (
     <div className={style.content_wrapper}>
-      <BrowserRouter>
+      <BrowserRouter basename="/cocktail-app">
         <div className={style.menu_wrapper}>
           <HomeMenu />
           <FavouritesMenu />
