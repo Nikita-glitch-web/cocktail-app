@@ -126,4 +126,5 @@
   flex-direction: row;
   width: 83%;
   align-items: baseline;
+  flex-wrap: wrap;
 }

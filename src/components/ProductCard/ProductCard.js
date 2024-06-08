@@ -38,7 +38,7 @@ export const ProductCard = ({ product, onRemove }) => {
 
   return <div className={style.details_content_greed}>
     <button className={`${style.favourites_btn}`} onClick={clickHandler}>
-      {isSelected ? 'Remove' : 'ADD'}
+      {isSelected ? '-' : '+'}
     </button>
     <Link
       className={style.link}

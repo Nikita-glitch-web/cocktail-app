@@ -86,6 +86,9 @@ body {
   padding-top: 50px;
   justify-content: center;
   padding-bottom: 50px;
+  align-items: baseline;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .drink_img_wrapper {
