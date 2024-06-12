@@ -6,7 +6,7 @@ import { ProductCard } from "../ProductCard";
 import { PopularIngredients } from "../Popular-Ingredients/PopularIngredients";
 import { RandomIngredients } from "../Random-Ingredients/Random-Ingredients";
 
-const HomePage = () => {
+export const HomePage = () => {
   const [randomCoctails, setRandomCoctails] = useState([]);
   const navigate = useNavigate();
   const randomCocktail = useState([]);
@@ -52,9 +52,7 @@ const HomePage = () => {
 
   return (
     <div className={style.search_bar_container}>
-      <h1 className={style.search_page_title}>
-        Find your perfect cocktail!
-      </h1>
+      <h1 className={style.search_page_title}>Find your perfect cocktail!</h1>
       <SearchForm onSubmit={submitHandler} />
       <div className={style.drink_of_day_wrapper}>
         <p className={style.home_title}>Drinks of the day!</p>
@@ -72,4 +70,3 @@ const HomePage = () => {
   );
 };
 
-export const Home = () => HomePage();

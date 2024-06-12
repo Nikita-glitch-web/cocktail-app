@@ -8,10 +8,14 @@ import style from "./Popular-Ingredients.module.css";
 export const PopularIngredients = () => {
     return (
       <div className={style.ingredients_wrapper}>
-        <PopularIngredient1 />
-        <PopularIngredient2 />
-        <PopularIngredient3 />
-        <PopularIngredient4 />
+        <div className={style.popular_row}>
+          <PopularIngredient1 />
+          <PopularIngredient2 />
+        </div>
+        <div className={style.popular_row}>
+          <PopularIngredient3 />
+          <PopularIngredient4 />
+        </div>
       </div>
     );
     

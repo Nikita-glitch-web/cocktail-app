@@ -20,9 +20,31 @@
   text-align: center;
 }
 
+.popular_row {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 768px) {
+
+  .img {
+    width: 100%;
+}
+
+
+  .popular_row {
+    flex-direction: column;
+  }
+
+  .popular_row:nth-last-child() {
+    padding-top: 20px;
+  }
+
   .ingredients_wrapper {
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0px; 
+    padding-right: 0px;
   }
 
 }

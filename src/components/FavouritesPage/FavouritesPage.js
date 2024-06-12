@@ -47,10 +47,9 @@ export const FavouritesPage = () => {
 
   return (
     <div className={style.search_page_form_wrapper}>
+
       {items.map((item) => {
-        return (
-          <ProductCard product={item} onRemove={removeItemFromStorage}/>
-        );
+        return <ProductCard product={item} onRemove={removeItemFromStorage} />;
       })}
     </div>
   );
