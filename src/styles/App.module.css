@@ -35,6 +35,5 @@ padding-top: 5%;
 @media (max-width: 768px) {
   .menu_wrapper {
     display: flex;
-    flex-direction: column;
   } 
 }

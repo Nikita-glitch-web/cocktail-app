@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import style from "./ProductCard.module.css";
 import { LOCAL_STORAGE_KEY_FAVORITES } from '../../constants';
 import { getItemsFromStorage } from '../../utils';
+import image from "./delete.png"
 
 
 
@@ -36,25 +37,27 @@ export const ProductCard = ({ product, onRemove }) => {
     console.log(isSelected);
   }, [getIsSelected]);
 
-  return <div className={style.details_content_greed}>
-    <button className={`${style.favourites_btn}`} onClick={clickHandler}>
-      {isSelected ? '-' : '+'}
-    </button>
-    <Link
-      className={style.link}
-      to={`/details/${product.idDrink}`}
-      title={product.idDrink}
-    >
-      <div className={style.details_content_item}>
-        <div className={style.drink_img_wrapper}>
-          <img
-            alt=""
-            src={product.strDrinkThumb}
-            className={style.meal_img}
-          />
+  return (
+    <div className={style.details_content_greed}>
+      <button className={`${style.favourites_btn}`} onClick={clickHandler}>
+        {isSelected ? <img className={style.remove_img} src={image} alt='' /> : "+"}
+      </button>
+      <Link
+        className={style.link}
+        to={`/details/${product.idDrink}`}
+        title={product.idDrink}
+      >
+        <div className={style.details_content_item}>
+          <div className={style.drink_img_wrapper}>
+            <img
+              alt=""
+              src={product.strDrinkThumb}
+              className={style.meal_img}
+            />
+          </div>
+          <h1 className={style.cocktail_title}>{product.strDrink}</h1>
         </div>
-        <h1 className={style.cocktail_title}>{product.strDrink}</h1>
-      </div>
-    </Link>
-  </div>;
+      </Link>
+    </div>
+  );
 };

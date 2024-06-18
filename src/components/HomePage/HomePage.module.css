@@ -128,3 +128,17 @@
   align-items: baseline;
   flex-wrap: wrap;
 }
+
+
+
+
+@media (max-width: 768px) {
+  .search_bar_container {
+  padding-top: 15%;
+}
+
+.search_page_title {
+  padding-left: 5%;
+    padding-right: 5%;
+}
+}
