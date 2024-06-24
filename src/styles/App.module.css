@@ -1,16 +1,18 @@
 body {
   margin: 0px;
   text-decoration: none;
+  background: #230312;
+  height: 100%;
 }
 
 .app_wrapper {
-  background: #230312;
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-attachment: fixed;
+  height: 100vh;
 }
 
 .app_title {

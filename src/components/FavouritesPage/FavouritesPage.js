@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import style from "./FavouritesPage.module.css";
-import { ProductCard } from '../ProductCard/ProductCard';
-import { getItemsFromStorage } from '../../utils';
+import { ProductCard } from "../ProductCard/ProductCard";
+import { getItemsFromStorage } from "../../utils";
+import { SearchForm } from "../SearchForm/SearchForm";
 
 export const FavouritesPage = () => {
   const [items, setItems] = useState([]);
@@ -37,20 +38,33 @@ export const FavouritesPage = () => {
     console.log("UseEffect works");
     readData();
     console.log("useEffect for empty array");
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const removeItemFromStorage = (productId) => {
-    const newItemsToSet = items.filter(({idDrink}) => productId !== idDrink)
+    const newItemsToSet = items.filter(({ idDrink }) => productId !== idDrink);
     setItems(newItemsToSet);
-  }
+  };
 
   return (
     <div className={style.search_page_form_wrapper}>
-
-      {items.map((item) => {
-        return <ProductCard product={item} onRemove={removeItemFromStorage} />;
-      })}
+      {items.length === 0 ? (
+        <div className={style.empty_wrapper}>
+          <p className={style.empty_text}>
+            Your favorites is empty, let's find your dream cocktail
+          </p>
+        </div>
+      ) : (
+        items.map((item) => {
+          return (
+            <ProductCard
+              key={item.idDrink}
+              product={item}
+              onRemove={removeItemFromStorage}
+            />
+          );
+        })
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .footer_box {
   padding-top: 30px;
-
+  position: fixed;
   padding-bottom: 30px;
   background: #1d000d;
   margin-top: 5%;
@@ -9,7 +9,6 @@
   flex-direction: column;
   width: 100%;
   /* height: 30%; */
-  position: relative;
   /* top: 0; */
   bottom: 0;
   left: 0;
