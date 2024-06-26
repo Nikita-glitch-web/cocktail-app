@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HomePage } from "./components/HomePage/HomePage";
 import style from "./styles/App.module.css";
 import { SearchPage } from "./components/SearchPage/SearchPage";
@@ -17,7 +17,7 @@ import ServerErrorPage from "./components/ErrorPage/ServerErrorPage";
 function App() {
   return (
     <div className={style.content_wrapper}>
-      <BrowserRouter basename="/cocktail-app">
+      <HashRouter path="/cocktail-app">
         <div className={style.menu_wrapper}>
           <BurgerMenu />
         </div>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/400" element={<ServerErrorPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
       <Footer />
     </div>
   );
