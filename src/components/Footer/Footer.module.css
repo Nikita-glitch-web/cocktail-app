@@ -1,7 +1,7 @@
 .footer_box {
-  padding-top: 30px;
+  padding-top: 12px;
   position: fixed;
-  padding-bottom: 30px;
+  padding-bottom: 12px;
   background: #1d000d;
   margin-top: 5%;
   display: flex;
@@ -27,3 +27,12 @@
   font-weight: 300;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@media (max-width: 767px) {
+  .footer_box {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+

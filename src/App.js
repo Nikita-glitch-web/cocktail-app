@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer/Footer";
 import { CategoriesPage } from "./components/CategoriesPage/CategoriesPage";
 import { AlcoholicPage } from "./components/AlcoholicPage/AlcoholicPage";
 import BurgerMenu from "./components/Burger-menu/BurgerMenu";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -28,9 +29,10 @@ function App() {
           <Route path="/details/:id" element={<DetailsPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/alcoholic" element={<AlcoholicPage />} />
+          <Route path="/404" element={<ErrorPage />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

@@ -94,6 +94,7 @@ body {
   flex-wrap: wrap;
   max-width: 100%;
   padding-top: 50px;
+  align-items: baseline;
   justify-content: center;
   padding-bottom: 50px;
   padding-left: 76px;
@@ -145,4 +146,11 @@ body {
 
 .link {
   text-decoration: none;
+}
+
+
+@media (max-width: 767px) {
+  .search_page_title {
+    padding-top: 30%;
+  }
 }

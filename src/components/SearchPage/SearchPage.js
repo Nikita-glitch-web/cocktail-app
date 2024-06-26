@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { SearchForm } from "../SearchForm/SearchForm";
 import style from "./SearchPage.module.css";
 import { ProductCard } from "../ProductCard";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
+import { useNavigate } from "react-router-dom";
 
 export const SearchPage = (index) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [inputValue, setInputValue] = useState("");
   const [items, setItems] = useState([]);
+  const navigate = useNavigate();
+
   console.log(items);
 
   const makeSearchRequest = async (inputValue) => {
@@ -19,11 +23,14 @@ export const SearchPage = (index) => {
         }
       );
       const data = await request.json();
+       if (!data?.drinks?.length) {
+         navigate("/404");
+         return;
+       }
       console.log(data);
       setItems(data.drinks);
     } catch (e) {
       console.error(e);
-      alert("ERRRO");
     }
   };
 
@@ -36,6 +43,10 @@ export const SearchPage = (index) => {
         }
       );
       const data = await request.json();
+      if (!data?.drinks?.length) {
+        navigate("/404");
+        return;
+      }
       console.log(data);
       setItems(data.drinks);
     } catch (e) {
