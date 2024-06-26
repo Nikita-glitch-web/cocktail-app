@@ -51,6 +51,8 @@ export const SearchPage = (index) => {
       setItems(data.drinks);
     } catch (e) {
       console.error(e);
+      navigate("/400");
+      return
     }
   };
 

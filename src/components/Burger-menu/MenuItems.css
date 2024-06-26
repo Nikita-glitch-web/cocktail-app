@@ -2,7 +2,7 @@
 .menu-items {
   display: flex;
   flex-direction: column;
-  background-color: none;
+  background-color: #230312;
   position: absolute;
   top: 40px;
   right: 0;

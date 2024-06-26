@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import style from "./ProductCard.module.css";
 import { LOCAL_STORAGE_KEY_FAVORITES } from '../../constants';
 import { getItemsFromStorage } from '../../utils';
-import image from "./delete.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
+const element = <FontAwesomeIcon icon={faXmark} />;
 
 
 
@@ -40,7 +43,7 @@ export const ProductCard = ({ product, onRemove }) => {
   return (
     <div className={style.details_content_greed}>
       <button className={`${style.favourites_btn}`} onClick={clickHandler}>
-        {isSelected ? <img className={style.remove_img} src={image} alt='' /> : "+"}
+        {isSelected ? element  : "+"}
       </button>
       <Link
         className={style.link}
