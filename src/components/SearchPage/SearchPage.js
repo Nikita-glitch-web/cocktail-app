@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { SearchForm } from "../SearchForm/SearchForm";
 import style from "./SearchPage.module.css";
@@ -14,7 +14,7 @@ export const SearchPage = (index) => {
 
   console.log(items);
 
-  const makeSearchRequest = async (inputValue) => {
+  const makeSearchRequest = useCallback(async (inputValue) => {
     try {
       const request = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputValue}`,
@@ -23,21 +23,21 @@ export const SearchPage = (index) => {
         }
       );
       const data = await request.json();
-       if (!data?.drinks?.length) {
-         navigate("/404");
-         return;
-       }
+      if (!data?.drinks?.length) {
+        navigate("/404");
+        return;
+      }
       console.log(data);
       setItems(data.drinks);
     } catch (e) {
       console.error(e);
     }
-  };
+  }, [navigate]);
 
-  const searchByIngredient = async (inputValue) => {
+  const searchByIngredient = useCallback(async (inputValue) => {
     try {
       const request = await fetch(
-        `www.thecocktaildb.com/api/json/v1/1/filter.php?i=${inputValue}`,
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${inputValue}`,
         {
           method: "GET",
         }
@@ -54,23 +54,23 @@ export const SearchPage = (index) => {
       navigate("/400");
       return;
     }
-  };
+  }, [navigate]);
 
   useEffect(() => {
-    console.log("RENDERD", searchParams.get("q"));
     const queryParamsValue = searchParams.get("q");
-    const category = searchParams.get("c");
-    console.log(category);
+    const ingredient = searchParams.get("i");
     // тут виклик нової функціїї з фетч
-    searchByIngredient();
+    if (ingredient) {
+      searchByIngredient(ingredient);
+      return;
+    }
     if (queryParamsValue) {
       // call search by ingredients
       setInputValue(queryParamsValue);
       makeSearchRequest(queryParamsValue);
-    } else if (category) {
-      console.log(">>>>>>>>.", category);
+      return;
     }
-  }, [searchParams]);
+  }, [searchParams, makeSearchRequest, searchByIngredient]);
 
   const submitHandler = (value) => {
     console.log(value);
