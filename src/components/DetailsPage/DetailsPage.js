@@ -98,9 +98,7 @@ export const DetailsPage = () => {
             <div className={style.ingredient_content}>
               {ingredients.map((ingredient, i) => {
                 return (
-                  <Link className={style.link} to={`/search?q=${ingredient}`}>
                     <Ingredient title={ingredient} measure={measures[i]} />
-                  </Link>
                 );
               })}
             </div>

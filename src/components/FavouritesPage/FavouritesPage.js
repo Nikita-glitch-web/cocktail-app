@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import style from "./FavouritesPage.module.css";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { getItemsFromStorage } from "../../utils";
@@ -53,6 +55,9 @@ export const FavouritesPage = () => {
           <p className={style.empty_text}>
             Your favorites is empty, let's find your dream cocktail
           </p>
+          <Link to={`/home`} className={style.back_btn_link}>
+            <button className={style.back_btn}>Back to home</button>
+          </Link>
         </div>
       ) : (
         items.map((item) => {

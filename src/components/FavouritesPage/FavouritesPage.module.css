@@ -83,6 +83,23 @@ body {
   border-bottom: none;
 }
 
+.back_btn_link {
+  text-decoration: none;
+}
+
+.back_btn {
+  background: none;
+  width: 165px;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  padding: 0px;
+}
+
 .form_wrapper {
   display: flex;
   justify-content: center;

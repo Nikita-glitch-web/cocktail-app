@@ -46,7 +46,6 @@ export const CategoriesPage = () => {
     <div>
       <div className={style.main_ingredient_wrapper}>
       </div>
-      <p className={style.title}>Categories page is working</p>
       <div className={style.card_wrapper}>
         {items.map((item) => {
           console.log(item);

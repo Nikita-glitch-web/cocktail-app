@@ -52,7 +52,7 @@ export const SearchPage = (index) => {
     } catch (e) {
       console.error(e);
       navigate("/400");
-      return
+      return;
     }
   };
 
