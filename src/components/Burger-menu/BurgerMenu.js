@@ -6,16 +6,29 @@ import "./BurgerMenu.css";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+    const handleClick = () => {
+        setIsVisible(false);
+
+    };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+
   };
 
   return (
-    <div className="burger-menu">
-      <BurgerIcon toggleMenu={toggleMenu} isOpen={isOpen} />
-      {isOpen && <MenuItems />}
-    </div>
+    isVisible && (
+      <div className="burger-menu">
+        <BurgerIcon
+          onClick={handleClick}
+          toggleMenu={toggleMenu}
+          isOpen={isOpen}
+        />
+        {isOpen && <MenuItems />}
+      </div>
+    )
   );
 };
 
