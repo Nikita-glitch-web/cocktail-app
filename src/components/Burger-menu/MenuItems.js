@@ -1,18 +1,25 @@
-// src/components/MenuItems.js
-import React from "react";
+import React, { useState } from "react";
 import "./MenuItems.css";
-import { Link } from "react-router-dom"
- 
+import { Link } from "react-router-dom";
+
 const MenuItems = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleClick = () => {
+    setIsVisible(false);
+  };
+
   return (
-    <div className="menu-items">
-      <Link className="link" to={`/home`}>
-        Home
-      </Link>
-      <Link className="link" to={`/favourites`}>
-        Favourites
-      </Link>
-    </div>
+    isVisible && (
+      <div className="menu-items">
+        <Link className="link" to="/home" onClick={handleClick}>
+          Home
+        </Link>
+        <Link className="link" to="/favourites" onClick={handleClick}>
+          Favourites
+        </Link>
+      </div>
+    )
   );
 };
 
